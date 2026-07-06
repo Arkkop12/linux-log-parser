@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual Environment
+.venv/
+
+# IDE
+.vscode/
+
+# Output Reports
+outputs/*.txt
+outputs/*.json
+
+# OS
+.DS_Store
+Thumbs.db
