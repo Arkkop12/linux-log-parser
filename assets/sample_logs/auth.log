@@ -1,0 +1,5 @@
+Jul 10 14:32:11 mint sshd[2154]: Failed password for root from 192.168.1.10 port 52314 ssh2
+Jul 10 14:32:24 mint sshd[2154]: Failed password for admin from 192.168.1.10 port 52315 ssh2
+Jul 10 14:33:01 mint sshd[2160]: Accepted password for arka from 192.168.1.15 port 53210 ssh2
+Jul 10 14:35:40 mint sudo: arka : TTY=pts/0 ; PWD=/home/arka ; USER=root ; COMMAND=/usr/bin/apt update
+Jul 10 14:36:02 mint systemd-logind[701]: Session opened for user arka(uid=1000) by (uid=0)
