@@ -29,3 +29,14 @@ class LogEntry:
     pid: int | None
     message: str
     event_type: EventType = EventType.UNKNOWN
+
+
+@dataclass(slots=True)
+class Statistics:
+    """
+    Stores summary statistics for parsed log entries.
+    """
+
+    total_logs: int
+    event_counts: dict[EventType, int]
+    process_counts: dict[str, int]
