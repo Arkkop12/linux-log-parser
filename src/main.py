@@ -1,5 +1,6 @@
 from pathlib import Path
 
+from log_parser.detector import detect_events
 from log_parser.parser import parse_log
 from log_parser.reader import read_log_file
 
@@ -12,6 +13,8 @@ def main() -> None:
     lines = read_log_file(SAMPLE_LOG)
 
     entries = parse_log(lines)
+
+    entries = detect_events(entries)
 
     print(f"Total entries: {len(entries)}")
     print()

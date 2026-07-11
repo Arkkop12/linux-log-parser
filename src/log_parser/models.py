@@ -1,5 +1,20 @@
 from dataclasses import dataclass
 from datetime import datetime
+from enum import Enum
+
+
+class EventType(Enum):
+    """
+    Supported security event types.
+    """
+
+    FAILED_LOGIN = "FAILED_LOGIN"
+    SUCCESSFUL_LOGIN = "SUCCESSFUL_LOGIN"
+    INVALID_USER = "INVALID_USER"
+    SUDO_COMMAND = "SUDO_COMMAND"
+    SESSION_OPENED = "SESSION_OPENED"
+    SESSION_CLOSED = "SESSION_CLOSED"
+    UNKNOWN = "UNKNOWN"
 
 
 @dataclass(slots=True)
@@ -13,3 +28,4 @@ class LogEntry:
     process: str
     pid: int | None
     message: str
+    event_type: EventType = EventType.UNKNOWN
