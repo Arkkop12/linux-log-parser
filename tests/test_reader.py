@@ -9,8 +9,12 @@ SAMPLE_LOG = PROJECT_ROOT / "assets" / "sample_logs" / "auth.log"
 
 
 class TestReader(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.sample_log = SAMPLE_LOG
+
     def test_read_log_file_returns_list(self):
-        lines = read_log_file(SAMPLE_LOG)
+        lines = read_log_file(self.sample_log)
 
         self.assertIsInstance(lines, list)
         self.assertGreater(len(lines), 0)
