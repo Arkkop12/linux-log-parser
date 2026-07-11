@@ -9,6 +9,7 @@ venv/
 
 # Build
 *.egg-info/
+*.egg
 build/
 dist/
 
@@ -19,6 +20,7 @@ dist/
 # Testing
 .pytest_cache/
 .coverage
+htmlcov/
 
 # Output
 outputs/*
