@@ -30,6 +30,27 @@ class LogEntry:
     message: str
     event_type: EventType = EventType.UNKNOWN
 
+    @property
+    def formatted_timestamp(self) -> str:
+        """
+        Return the timestamp as a formatted string.
+        """
+        return self.timestamp.strftime("%Y-%m-%d %H:%M:%S")
+
+    @property
+    def pid_display(self) -> str:
+        """
+        Return the PID as a display string.
+        """
+        return str(self.pid) if self.pid is not None else "-"
+
+    @property
+    def event_name(self) -> str:
+        """
+        Return the event type as a string.
+        """
+        return self.event_type.value
+
 
 @dataclass(slots=True)
 class Statistics:
