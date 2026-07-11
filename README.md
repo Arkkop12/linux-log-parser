@@ -5,8 +5,6 @@ A Python-based log analysis tool designed to help understand how Linux authentic
 
 The primary objective of this project is to understand how Linux authentication logs can be transformed into structured security information through log parsing, event detection, and reporting while applying clean software engineering principles.
 
-## Architecture Diagram
-
 ## Project Overview
 
 Linux Log Parser is the second project in a long-term Blue Team Cyber Security portfolio roadmap. It focuses on one core competency: Linux log analysis.
@@ -51,6 +49,7 @@ Rather than attempting to build a full Security Information and Event Management
 | Dependencies            | Python Standard Library  |
 
 ## Software Architecture
+![Software Architecture](assets/diagram/architecture.png)
 
 The application is designed using a modular architecture where each module has a single responsibility. Every stage of the log analysis pipeline is separated into its own component, making the project easier to understand, maintain, test, and extend.
 
@@ -66,40 +65,19 @@ The application is designed using a modular architecture where each module has a
 The project follows the principle of **Separation of Concerns**, where each module focuses on one specific task. This design simplifies future maintenance while improving readability and testability.
 
 ## Workflow
+![Workflow](assets/diagram/workflow.png)
 
-The application processes Linux log files through several sequential stages.
+The application processes Linux authentication log files through a sequential pipeline. Each stage is responsible for a specific task, starting from reading the input log file, parsing log entries into structured objects, detecting predefined security events, generating statistical summaries, and finally producing analysis reports in both TXT and JSON formats.
+
+The workflow consists of the following stages:
 
 1. Read the input log file.
 2. Parse each log line into a structured object.
 3. Detect predefined security events.
 4. Generate statistical summaries.
-5. Produce TXT and JSON reports.
-6. Save generated reports to the selected output directory.
+5. Generate analysis reports.
+6. Save TXT and JSON reports to the selected output directory.
 
-The overall workflow can be summarized as follows:
-
-```text
-Log File
-    │
-    ▼
-Reader
-    │
-    ▼
-Parser
-    │
-    ▼
-Event Detector
-    │
-    ▼
-Statistics
-    │
-    ▼
-Reporter
-    │
-    ▼
-TXT Report
-JSON Report
-```
 
 ## Repository Structure
 
